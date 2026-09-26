@@ -190,3 +190,24 @@ img{
 .carousel-btn.prev {left: 15px;}
 .carousel-btn.next {right: 15px;}
 
+body {
+font-family: Arial;
+}
+.contenedor {
+width: 400px;
+margin: 50px auto;
+}
+form {
+display: flex;
+flex-direction: column;
+}
+input,
+
+textarea {
+margin-bottom: 10px;
+padding: 5px;
+}
+button {
+padding: 5px;
+margin-top: 10px;
+}
