@@ -1,7 +1,9 @@
-const boton= document.getElementById("botonCambiar");
-const titulo= document.getElementById("titulo");
-let contador= 0;
-boton.addEventListener("click",function(){
+
+const titulo = document.getElementById("titulo");
+const botonC = document.getElementById("botonCambiar");
+
+let contador = 0;
+botonC.addEventListener("click",function(){
     contador++;
     if (contador===1){
         titulo.textContent="!Bienvenidos¡";
@@ -47,3 +49,45 @@ volverArriba.addEventListener("click",function(){
         behavior: "smooth"
     });
 });
+
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const carouselContainer = document.getElementsByClassName('carousel');
+
+let currentSlide = 0;
+let autoSlideInterval;
+
+console.log(slides.length)
+// Funncion para mostrar un slide especifico
+function showSlide(index) {
+    console.log(slides.length);
+    if (slides.length === 0) return;
+
+    if (index >= slides.length) {
+        currentSlide = 0;
+    } else if (index < 0 ) {
+      currentSlide = slides.length -1;
+    } else {
+      currentSlide = index;
+    }
+
+// Quitar la clase active de todos los slides
+slides.forEach(slide => slide.classList.remove('active'));
+
+// Activar el slide
+slides[currentSlide].classList.add('active')
+}
+
+// Avanzar al siguente slide
+function nextSlide() {
+    showSlide(currentSlide + 1);
+}
+// Retroceder al slide anterior
+function prevSlide() {
+    showSlide(currentSlide - 1);
+}
+// Event Listeners para botones de navegacion
+if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+if (prevBtn) prevBtn.addEventListener('click', prevSlide);
