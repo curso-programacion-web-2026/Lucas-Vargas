@@ -91,3 +91,18 @@ function prevSlide() {
 // Event Listeners para botones de navegacion
 if (nextBtn) nextBtn.addEventListener('click', nextSlide);
 if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+
+const formulario = document.getElementById("formulario");
+formulario.addEventListener("submit", function(event) {
+event.preventDefault();
+const nombre = document.getElementById("nombre").value.trim();
+const email = document.getElementById("email").value.trim();
+const mensaje = document.getElementById("mensaje").value.trim();
+const resultado = document.getElementById("resultado");
+if (nombre === "" || email === "" || mensaje === "") {
+resultado.textContent = "Por favor, completá todos los campos.";
+} else {
+resultado.textContent = "¡Mensaje enviado correctamente!";
+formulario.reset();
+}
+});
