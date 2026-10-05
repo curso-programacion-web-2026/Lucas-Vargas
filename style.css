@@ -213,3 +213,48 @@ padding: 5px;
 margin-top: 10px;
 }
 
+.portada{
+    background-image: url("reparar-consolas.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.protada::backdrop{
+    content: icon;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--overlay-bg);
+} 
+.protada-contenido{
+    position: relative;
+    z-index: 1;
+    color: aqua;
+    padding: 0 20px;
+}
+
+.protada-contenido h2{
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.protada-contenido p{
+    font-size: 1.2rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.top-controls{
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px 2rem;
+}
